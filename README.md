@@ -1,7 +1,7 @@
 # Movingimage Frontend Developer challenge
 
 ## Steps for the challenge
-Please clone this repository and complete the tasks below. Then open a Pull request to the repository.
+Please clone this repository and complete the tasks below. Then upload your code to a repository(github etc...) and share the link.
 
 ## Tasks to be completed
 * (Mandatory) Please complete the video.ts (You can find this file in the services folder) file by the interfaces defined.
