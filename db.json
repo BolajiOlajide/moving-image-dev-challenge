@@ -1,0 +1,70 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Thriller"
+    },
+    {
+      "id": 2,
+      "name": "Criminal"
+    },
+    {
+      "id": 3,
+      "name": "Comedy"
+    },
+    {
+      "id": 4,
+      "name": "Horror"
+    }
+  ],
+  "authors": [
+    {
+      "id": 1,
+      "name": "David Munch",
+      "videos": [
+        {
+          "id": 1,
+          "catIds": [1, 2],
+          "name": "Set the Moon"
+        },
+        {
+          "id": 2,
+          "catIds": [2, 4],
+          "name": "Lights"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Li Sun Chi",
+      "videos": [
+        {
+          "id": 3,
+          "catIds": [4],
+          "name": "Fun"
+        },
+        {
+          "id": 4,
+          "catIds": [1, 2, 4],
+          "name": "It"
+        },
+        {
+          "id": 5,
+          "catIds": [2],
+          "name": "Go and get it"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Steven Scorsese",
+      "videos": [
+        {
+          "id": 6,
+          "catIds": [2, 4],
+          "name": "Torrance"
+        }
+      ]
+    }
+  ]
+}

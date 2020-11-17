@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import { AppBar, Container, Toolbar, Typography } from '@material-ui/core';
+import { VideosTable } from './components/videos-table';
+import { getVideos } from './services/videos';
+import { Video } from './services/video.interface';
 
-function App() {
+const App: React.FC = () => {
+  const [videos, setVideos] = useState<Video[]>([]);
+
+  const handleVideosResponse = (videos: Video[]) => {
+    setVideos(videos);
+  };
+
+  useEffect(() => {
+    getVideos().then(handleVideosResponse);
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6">Video Manager</Typography>
+        </Toolbar>
+      </AppBar>
+      <Container>
+        <VideosTable videos={videos} />
+      </Container>
+    </>
   );
-}
+};
 
 export default App;
