@@ -1,5 +1,9 @@
 # Movingimage Frontend Developer challenge
 
+## Steps to run the project
+* Install dependencies using either npm or yarn.
+* Run ```npm start``` to start the server (backend) and the app itself.
+
 ## Steps for the challenge
 Please clone this repository and complete the tasks below. Then upload your code to a repository(github etc...) and share the link.
 
