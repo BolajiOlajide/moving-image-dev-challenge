@@ -21,7 +21,7 @@ export const VideosTable: React.FC<VideosTableProps> = ({ videos }) => {
                 {video.name}
               </TableCell>
               <TableCell>{video.author}</TableCell>
-              <TableCell>{video.categories.join(', ')}</TableCell>=
+              <TableCell>{video.categories.join(', ')}</TableCell>
               <TableCell> {/* add buttons here as needed */}  </TableCell>
             </TableRow>
           ))}
