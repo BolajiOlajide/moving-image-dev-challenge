@@ -1,6 +1,10 @@
 import React from 'react';
 import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@material-ui/core';
-import { VideosTableProps } from './videos-table.interface';
+import { ProcessedVideo } from '../common/interfaces';
+
+interface VideosTableProps {
+    videos: ProcessedVideo[];
+}
 
 export const VideosTable: React.FC<VideosTableProps> = ({ videos }) => {
   return (

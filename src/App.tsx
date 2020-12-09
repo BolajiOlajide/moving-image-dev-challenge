@@ -2,23 +2,23 @@ import React, { useEffect, useState } from 'react';
 import { AppBar, Container, Toolbar, Typography } from '@material-ui/core';
 import { VideosTable } from './components/videos-table';
 import { getVideos } from './services/videos';
-import { Video } from './services/video.interface';
+import { ProcessedVideo } from './common/interfaces';
 
 const App: React.FC = () => {
-  const [videos, setVideos] = useState<Video[]>([]);
-
-  const handleVideosResponse = (videos: Video[]) => {
-    setVideos(videos);
-  };
+  const [videos, setVideos] = useState<ProcessedVideo[]>([]);
 
   useEffect(() => {
-    getVideos().then(handleVideosResponse);
+    getVideos()
+      .then((videos) => {
+        setVideos(videos);
+      });
   }, []);
+
   return (
     <>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6">Video Manager</Typography>
+          <Typography variant="h6">Videos</Typography>
         </Toolbar>
       </AppBar>
       <Container>
