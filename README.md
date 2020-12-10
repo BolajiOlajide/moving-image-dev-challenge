@@ -81,6 +81,6 @@ UI Suggestion
 
 ![movingimage](./assets/04-delete-video-button.png)
 
-Requirements
+### Requirements
 - There is an interaction element to delete an existing video
 - ***Optional***: A dialog will appear to confirm the deletion
