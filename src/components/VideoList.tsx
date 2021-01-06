@@ -3,9 +3,7 @@ import React from 'react';
 import type { VideoListProps } from '../common/interfaces';
 
 
-const VideoList: React.FC<VideoListProps> = (props: VideoListProps) => {
-  const { videos } = props;
-
+const VideoList: React.FC<VideoListProps> = ({ videos }: VideoListProps) => {
   return (
     <table className="videos">
       <thead>
@@ -29,8 +27,8 @@ const VideoList: React.FC<VideoListProps> = (props: VideoListProps) => {
               <td>best 1080p</td>
               <td>19.10.2020</td>
               <td>
-                <a href={`/video/edit/${video.id}`} className="edit-vid-btn">Edit</a>
-                <a href={`/video/delete/${video.id}`} className="delete-vid-btn">Delete</a>
+              <a href={`/video/edit/${video.id}`} className="edit-vid-btn">Edit</a>
+              <a href={`/video/delete/${video.id}`} className="delete-vid-btn">Delete</a>
               </td>
             </tr>
           )

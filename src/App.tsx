@@ -7,18 +7,25 @@ import {
 
 import Header from './components/Header';
 import Home from './pages/home';
+import VideoContext from './context/VideoContext';
+import useVideo from './hooks/useVideo';
+import { VideoContextType } from './common/interfaces';
 
 const App: React.FC = () => {
-  return (
-    <Router>
-      <Header />
+  const videos: VideoContextType = useVideo();
 
-      <Switch>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
-    </Router>
+  return (
+    <VideoContext.Provider value={videos}>
+      <Router>
+        <Header />
+
+        <Switch>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </Router>
+    </VideoContext.Provider>
   )
 };
 

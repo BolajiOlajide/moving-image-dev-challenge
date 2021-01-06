@@ -1,32 +1,40 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 
-import type { ProcessedVideo } from '../common/interfaces';
-import { getVideos } from '../services/videos';
 import Layout from '../components/Layout';
 import Spinner from '../components/Spinner';
 import VideoList from '../components/VideoList';
+import VideoContext from '../context/VideoContext';
+import { ProcessedVideo, VideoContextType } from '../common/interfaces';
+
 
 const Home: React.FC = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [videos, setVideos] = useState<ProcessedVideo[]>([]);
+  const [searchTerm, setSearchTerm] = useState<string>('')
+  const { videos, isLoading } = useContext<VideoContextType>(VideoContext);
+  const [filteredVideos, setFilteredVideos] = useState<ProcessedVideo[]>([]);
+  const [showFilteredVideos, setShowFilteredVideos] = useState<boolean>(false);
 
-  useEffect(() => {
-    setIsLoading(true);
+  const filterVideos = () => {
+    setFilteredVideos(videos.filter(video => video.name.toLowerCase().includes(searchTerm.toLowerCase())));
+    setShowFilteredVideos(true);
+  }
 
-    getVideos()
-      .then((videos) => {
-        setVideos(videos);
-      })
-      .finally(() => {
-        setIsLoading(false);
-      })
-  }, []);
+  const resetSearch = () => {
+    setFilteredVideos([]);
+    setShowFilteredVideos(false);
+    setSearchTerm('');
+  }
 
   return (
     <Layout>
       <h2>VManager Demo v0.0.1</h2>
 
-      { isLoading ? <Spinner /> : <VideoList videos={videos} />}
+      <section className="searchForm">
+        <input name="search" value={searchTerm} onChange={({ target }) => setSearchTerm(target.value)} className="search-input" />
+        <button className="search-btn" onClick={filterVideos}>Search</button>
+        <button className="reset-btn" onClick={resetSearch}>Reset</button>
+      </section>
+
+      { isLoading ? <Spinner /> : <VideoList videos={showFilteredVideos ? filteredVideos : videos} />}
     </Layout>
   );
 };

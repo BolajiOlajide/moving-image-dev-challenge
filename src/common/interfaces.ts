@@ -25,3 +25,11 @@ export interface ProcessedVideo {
 export interface VideoListProps {
   videos: ProcessedVideo[]
 }
+
+export interface VideoContextType {
+  isLoading: boolean;
+  addVideo: (video: ProcessedVideo) => ProcessedVideo;
+  addVideos: (videos: ProcessedVideo[]) => ProcessedVideo[];
+  errorMessage: string;
+  videos: ProcessedVideo[];
+}

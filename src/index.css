@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -20,8 +18,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 header {
@@ -54,7 +51,7 @@ nav ul {
 }
 
 .navLink.active a {
-color: #FFF
+  color: #FFF
 }
 
 .add-video {
@@ -98,12 +95,10 @@ footer {
   0% {
     box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
   }
-  5%,
-  95% {
+  5%, 95% {
     box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
   }
-  10%,
-  59% {
+  10%, 59% {
     box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
   }
   20% {
@@ -121,12 +116,10 @@ footer {
   0% {
     box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
   }
-  5%,
-  95% {
+  5%, 95% {
     box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
   }
-  10%,
-  59% {
+  10%, 59% {
     box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
   }
   20% {
@@ -177,7 +170,9 @@ footer {
   background-color: #f2f2f2;
 }
 
-.videos tr:hover {background-color: #ddd;}
+.videos tr:hover {
+  background-color: #ddd;
+}
 
 .videos th {
   padding-top: 12px;
@@ -201,4 +196,41 @@ footer {
   color: #fff;
   margin: 10px;
   text-decoration: none;
+}
+
+.searchForm {
+  margin: 20px 0;
+}
+
+.search-input {
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+.search-btn {
+  height: 40px;
+  margin: 0 10px;
+  background: #307bff;
+  color: #FFF;
+  outline: none;
+  border: 0;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  width: 100px;
+  cursor: pointer;
+}
+
+.reset-btn {
+  height: 40px;
+  margin: 0 10px;
+  background: black;
+  color: #FFF;
+  outline: none;
+  border: 0;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  width: 100px;
+  cursor: pointer;
 }
