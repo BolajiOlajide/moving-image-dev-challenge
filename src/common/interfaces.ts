@@ -33,4 +33,6 @@ export interface VideoContextType {
   errorMessage: string;
   videos: ProcessedVideo[];
   lastId: number;
+  updateVideo: (currentVideo: ProcessedVideo) => ProcessedVideo[];
+  getVideo: (videoId: number) => ProcessedVideo | undefined;
 }

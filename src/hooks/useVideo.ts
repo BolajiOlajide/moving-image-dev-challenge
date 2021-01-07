@@ -39,7 +39,25 @@ const useVideo = (): VideoContextType => {
     return videos;
   };
 
-  return { addVideo, videos, addVideos, isLoading, errorMessage, lastId };
+  const getVideo = (videoId: number): ProcessedVideo | undefined => {
+    return videos
+      .find(video => video.id === videoId);
+  }
+
+  const updateVideo = (currentVideo: ProcessedVideo): ProcessedVideo[] => {
+    const updatedVideos = videos.map((video) => {
+      if (video.id === currentVideo.id) {
+        return currentVideo;
+      }
+
+      return video;
+    });
+
+    setVideos(updatedVideos);
+    return updatedVideos;
+  }
+
+  return { addVideo, videos, addVideos, isLoading, errorMessage, lastId, updateVideo, getVideo };
 };
 
 export default useVideo;

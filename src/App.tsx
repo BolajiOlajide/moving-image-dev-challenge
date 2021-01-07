@@ -9,6 +9,7 @@ import Header from './components/Header';
 import Home from './pages/home';
 import AddVideo from './pages/add-video';
 import About from './pages/about';
+import EditVideo from './pages/edit-video';
 import Faq from './pages/faq';
 
 import VideoContext from './context/VideoContext';
@@ -16,27 +17,31 @@ import useVideo from './hooks/useVideo';
 import { VideoContextType } from './common/interfaces';
 
 const App: React.FC = () => {
-  const videos: VideoContextType = useVideo();
+  const videoHook: VideoContextType = useVideo();
 
   return (
-    <VideoContext.Provider value={videos}>
+    <VideoContext.Provider value={videoHook}>
       <Router>
         <Header />
 
         <Switch>
-          <Route path="/add-video">
+          <Route exact path="/add-video">
             <AddVideo />
           </Route>
 
-          <Route path="/faq">
+          <Route exact path="/video/:videoId/edit">
+            <EditVideo />
+          </Route>
+
+          <Route exact path="/faq">
             <Faq />
           </Route>
 
-          <Route path="/about">
+          <Route exact path="/about">
             <About />
           </Route>
 
-          <Route path="/">
+          <Route exact path="/">
             <Home />
           </Route>
         </Switch>
