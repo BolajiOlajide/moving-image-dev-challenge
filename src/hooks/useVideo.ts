@@ -8,6 +8,7 @@ const useVideo = (): VideoContextType => {
   const [videos, setVideos] = useState<ProcessedVideo[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>('');
+  const [lastId, setLastId] = useState<number>(0);
 
   useEffect(() => {
     setIsLoading(true);
@@ -17,6 +18,10 @@ const useVideo = (): VideoContextType => {
       .catch((error) => setErrorMessage(error.message))
       .finally(() => setIsLoading(false));
   }, []);
+
+  useEffect(() => {
+    setLastId(videos[videos.length - 1]?.id || 0);
+  }, [videos])
 
   const addVideo = (video: ProcessedVideo): ProcessedVideo => {
     setVideos((currentVideos: ProcessedVideo[]) => {
@@ -34,7 +39,7 @@ const useVideo = (): VideoContextType => {
     return videos;
   };
 
-  return { addVideo, videos, addVideos, isLoading, errorMessage };
+  return { addVideo, videos, addVideos, isLoading, errorMessage, lastId };
 };
 
 export default useVideo;

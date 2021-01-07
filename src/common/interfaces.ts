@@ -32,4 +32,5 @@ export interface VideoContextType {
   addVideos: (videos: ProcessedVideo[]) => ProcessedVideo[];
   errorMessage: string;
   videos: ProcessedVideo[];
+  lastId: number;
 }

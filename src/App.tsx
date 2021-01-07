@@ -7,6 +7,7 @@ import {
 
 import Header from './components/Header';
 import Home from './pages/home';
+import AddVideo from './pages/add-video';
 import VideoContext from './context/VideoContext';
 import useVideo from './hooks/useVideo';
 import { VideoContextType } from './common/interfaces';
@@ -20,6 +21,10 @@ const App: React.FC = () => {
         <Header />
 
         <Switch>
+          <Route path="/add-video">
+            <AddVideo />
+          </Route>
+
           <Route path="/">
             <Home />
           </Route>

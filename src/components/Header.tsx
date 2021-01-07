@@ -27,7 +27,7 @@ const Header: React.FC = () => {
         </ul>
       </nav>
 
-      <Link to="/video" className="add-video">Add Video</Link>
+      <Link to="/add-video" className="add-video">Add Video</Link>
     </header>
   )
 };

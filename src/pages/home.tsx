@@ -14,7 +14,11 @@ const Home: React.FC = () => {
   const [showFilteredVideos, setShowFilteredVideos] = useState<boolean>(false);
 
   const filterVideos = () => {
-    setFilteredVideos(videos.filter(video => video.name.toLowerCase().includes(searchTerm.toLowerCase())));
+    const videosMatchingSearchTerm = videos
+      .filter((video) => {
+        return video.name.toLowerCase().includes(searchTerm.toLowerCase()) || video.author.toLowerCase().includes(searchTerm.toLowerCase());
+      })
+    setFilteredVideos(videosMatchingSearchTerm);
     setShowFilteredVideos(true);
   }
 

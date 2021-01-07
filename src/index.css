@@ -7,6 +7,7 @@ body {
 
 :root {
   --greenColor: #34a846;
+  --btnColor: #307bff;
 }
 
 #root {
@@ -210,7 +211,7 @@ footer {
 .search-btn {
   height: 40px;
   margin: 0 10px;
-  background: #307bff;
+  background: var(--btnColor);
   color: #FFF;
   outline: none;
   border: 0;
@@ -232,5 +233,41 @@ footer {
   border-radius: 5px;
   font-weight: bold;
   width: 100px;
+  cursor: pointer;
+}
+
+.formGroup {
+  margin: 20px 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.formGroup label {
+  margin-right: 100px;
+  font-size: 1.1rem;
+  width: 150px;
+}
+
+.formGroup input, .formGroup select {
+  font-size: 1.1rem;
+  width: 400px;
+}
+
+.error {
+  font-size: 0.9rem;
+  color: red;
+  display: block;
+  margin: 10px 0;
+}
+
+.submitVideo {
+  background: var(--btnColor);
+  padding: 10px 20px;
+  outline: none;
+  border: 0;
+  border-radius: 5px;
+  color: #FFF;
+  margin-right: 10px;
   cursor: pointer;
 }
