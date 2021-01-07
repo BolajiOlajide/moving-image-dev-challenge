@@ -57,7 +57,13 @@ const useVideo = (): VideoContextType => {
     return updatedVideos;
   }
 
-  return { addVideo, videos, addVideos, isLoading, errorMessage, lastId, updateVideo, getVideo };
+  const deleteVideo = (videoId: number): void => {
+    const updatedVideos = videos.filter((video) => video.id !== videoId);
+
+    setVideos(updatedVideos)
+  }
+
+  return { addVideo, videos, addVideos, isLoading, errorMessage, lastId, updateVideo, getVideo, deleteVideo };
 };
 
 export default useVideo;

@@ -1,10 +1,20 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 
 import type { VideoListProps } from '../common/interfaces';
+import VideoContext from '../context/VideoContext';
+import DeleteBtn from '../components/DeleteBtn';
 
 
 const VideoList: React.FC<VideoListProps> = ({ videos }: VideoListProps) => {
+  const history = useHistory();
+  const { deleteVideo } = useContext(VideoContext);
+
+  const deleteVideoFn = (videoId: number) => {
+    deleteVideo(videoId);
+    history.push('/');
+  }
+
   return (
     <table className="videos">
       <thead>
@@ -19,7 +29,7 @@ const VideoList: React.FC<VideoListProps> = ({ videos }: VideoListProps) => {
       </thead>
 
       <tbody>
-        {videos.map(video => {
+        {videos.map((video) => {
           return (
             <tr key={video.id}>
               <td>{video.name}</td>
@@ -29,7 +39,7 @@ const VideoList: React.FC<VideoListProps> = ({ videos }: VideoListProps) => {
               <td>19.10.2020</td>
               <td>
               <Link to={`/video/${video.id}/edit`} className="edit-vid-btn">Edit</Link>
-              <a href={`/video/delete/${video.id}`} className="delete-vid-btn">Delete</a>
+              <DeleteBtn deleteVideoFn={() => deleteVideoFn(video.id)} videoId={video.id} />
               </td>
             </tr>
           )

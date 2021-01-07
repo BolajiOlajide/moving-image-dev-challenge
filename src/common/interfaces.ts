@@ -35,4 +35,10 @@ export interface VideoContextType {
   lastId: number;
   updateVideo: (currentVideo: ProcessedVideo) => ProcessedVideo[];
   getVideo: (videoId: number) => ProcessedVideo | undefined;
+  deleteVideo: (videoId: number) => void;
+}
+
+export interface DeleteBtnProps {
+  deleteVideoFn: Function;
+  videoId: number;
 }
